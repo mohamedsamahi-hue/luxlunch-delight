@@ -259,3 +259,8 @@ html {
     font-family: var(--font-sans);
   }
 }
+
+/* Pointer cursor on all interactive elements */
+a[href], button:not(:disabled), [role="button"], select, label:has(input) {
+  cursor: pointer;
+}
