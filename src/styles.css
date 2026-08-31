@@ -253,3 +253,9 @@
 html {
   scroll-behavior: smooth;
 }
+
+@layer base {
+  body {
+    font-family: var(--font-sans);
+  }
+}
