@@ -55,7 +55,7 @@ export function Footer() {
               {quickLinks.map((l) => (
                 <li key={l}>
                   <a
-                    href={`#${l.toLowerCase().split(" ")[0].replace("'", "")}`}
+                    href={`#${(l.toLowerCase().split(" ")[0] ?? "").replace("'", "")}`}
                     className="text-sm text-white/65 transition-colors hover:text-[var(--lux-green)]"
                   >
                     {l}
