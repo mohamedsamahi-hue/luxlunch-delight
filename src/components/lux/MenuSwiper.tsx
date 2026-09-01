@@ -1,4 +1,4 @@
-import { useCallback, useState } from "react";
+import { useCallback, useEffect, useRef, useState } from "react";
 import useEmblaCarousel from "embla-carousel-react";
 import { ArrowLeft, ArrowRight, Clock, Flame } from "lucide-react";
 import spaghetti from "@/assets/dish-spaghetti.png";
@@ -23,12 +23,23 @@ type Dish = {
 const dishes: Dish[] = [
   { name: "Veg Crunch Garden", note: "Heirloom leaves, aged pecorino", kcal: 240, time: "10 min", price: "18", img: salad, cat: "Starters" },
   { name: "Salmon Fois", note: "Torched salmon, citrus pearls", kcal: 520, time: "22 min", price: "34", img: salmon, cat: "Starters" },
+  { name: "Golden Twirl Bites", note: "Crisped pasta, saffron aioli", kcal: 310, time: "12 min", price: "16", img: spaghetti, cat: "Starters" },
+  { name: "Amber Beet Tartare", note: "Smoked beet, horseradish cream", kcal: 210, time: "9 min", price: "19", img: salad, cat: "Starters" },
+  { name: "Citrus Cure Salmon", note: "Yuzu cure, fennel pollen", kcal: 280, time: "14 min", price: "24", img: salmon, cat: "Starters" },
   { name: "Truffle Spaghetti", note: "Black truffle, 36-month parmesan", kcal: 610, time: "18 min", price: "29", img: spaghetti, cat: "Main Course" },
   { name: "Cedar Salmon Royale", note: "Cedar smoked, saffron beurre", kcal: 480, time: "26 min", price: "42", img: salmon, cat: "Main Course" },
+  { name: "Garden Verde Bowl", note: "Charred greens, green goddess", kcal: 380, time: "16 min", price: "26", img: salad, cat: "Main Course" },
+  { name: "Saffron Tagliatelle", note: "Hand-cut, brown butter, sage", kcal: 560, time: "20 min", price: "31", img: spaghetti, cat: "Main Course" },
+  { name: "Ember Salmon en Croûte", note: "Herb crust, champagne velouté", kcal: 540, time: "28 min", price: "44", img: salmon, cat: "Main Course" },
   { name: "Herb Tea Platter", note: "Seasonal greens, honey drizzle", kcal: 180, time: "8 min", price: "14", img: salad, cat: "Hi-Tea" },
+  { name: "Emerald Bloom", note: "Pistachio, matcha, sea salt", kcal: 275, time: "11 min", price: "17", img: salad, cat: "Hi-Tea" },
+  { name: "Salmon Rillette Toast", note: "Brioche, dill crème fraîche", kcal: 320, time: "10 min", price: "19", img: salmon, cat: "Hi-Tea" },
+  { name: "Angel Hair Nest", note: "Light pasta nest, lemon zest", kcal: 290, time: "9 min", price: "15", img: spaghetti, cat: "Hi-Tea" },
   { name: "Golden Angel Nest", note: "Sweet pasta nest, vanilla cream", kcal: 390, time: "15 min", price: "16", img: spaghetti, cat: "Desserts" },
   { name: "Citrus Cloud", note: "Blood orange, torched meringue", kcal: 300, time: "12 min", price: "15", img: salmon, cat: "Desserts" },
-  { name: "Emerald Bloom", note: "Pistachio, matcha, sea salt", kcal: 275, time: "11 min", price: "17", img: salad, cat: "Hi-Tea" },
+  { name: "Matcha Garden", note: "Matcha mousse, candied herbs", kcal: 260, time: "10 min", price: "14", img: salad, cat: "Desserts" },
+  { name: "Caramel Silk Twirl", note: "Salted caramel, cocoa soil", kcal: 420, time: "13 min", price: "17", img: spaghetti, cat: "Desserts" },
+  { name: "Amber Honey Sphere", note: "Wildflower honey, smoked cream", kcal: 340, time: "11 min", price: "18", img: salmon, cat: "Desserts" },
 ];
 
 export function MenuSwiper() {
