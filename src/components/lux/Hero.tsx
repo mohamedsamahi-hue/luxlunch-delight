@@ -86,13 +86,13 @@ export function Hero() {
             <div className="mt-9 flex flex-wrap items-center gap-4">
               <a
                 href="#menu"
-                className="ripple gradient-lux rounded-full px-8 py-4 text-sm font-semibold text-white shadow-[var(--shadow-glow-orange)] transition-transform hover:scale-105"
+                className="ripple gradient-lux rounded-full px-8 py-4 text-sm font-semibold text-white shadow-[var(--shadow-glow-orange)] transition-all duration-200 hover:brightness-110 active:scale-95"
               >
                 Discover the tasting menu
               </a>
               <a
                 href="#experience"
-                className="text-sm font-semibold text-[var(--lux-green)] hover:underline"
+                className="text-sm font-semibold text-white/80 transition-colors hover:text-white"
               >
                 Watch the chef's table →
               </a>

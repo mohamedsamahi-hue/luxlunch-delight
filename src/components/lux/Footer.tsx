@@ -41,7 +41,7 @@ export function Footer() {
               <button
                 type="submit"
                 aria-label="Subscribe"
-                className="grid h-10 w-10 place-items-center rounded-full text-white transition-transform hover:scale-110"
+                className="grid h-10 w-10 place-items-center rounded-full text-white transition-all duration-200 hover:brightness-125 active:scale-95"
                 style={{ background: "var(--lux-green)", boxShadow: "var(--shadow-glow-green)" }}
               >
                 <ArrowRight className="h-4 w-4" />

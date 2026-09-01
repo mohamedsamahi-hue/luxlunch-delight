@@ -56,7 +56,7 @@ export function Navbar() {
             <li key={l.label}>
               <a
                 href={l.href}
-                className="text-sm font-medium text-white/80 transition-colors hover:text-[var(--lux-green)]"
+                className="text-sm font-medium text-white/80 transition-colors hover:text-white"
               >
                 {l.label}
               </a>
@@ -65,12 +65,12 @@ export function Navbar() {
         </ul>
 
         <div className="hidden items-center gap-4 md:flex">
-          <button className="text-sm font-semibold text-[var(--lux-green)] transition-all hover:drop-shadow-[var(--shadow-glow-green)]">
+          <button className="text-sm font-semibold text-white/80 transition-colors hover:text-white">
             Be a member
           </button>
           <a
             href="#reservations"
-            className="ripple gradient-lux rounded-full px-6 py-2.5 text-sm font-semibold text-white shadow-[var(--shadow-glow-orange)] transition-transform hover:scale-105"
+            className="ripple gradient-lux rounded-full px-6 py-2.5 text-sm font-semibold text-white shadow-[var(--shadow-glow-orange)] transition-all duration-200 hover:brightness-110 active:scale-95"
           >
             Book Now
           </a>
@@ -93,7 +93,7 @@ export function Navbar() {
                 <a
                   href={l.href}
                   onClick={() => setOpen(false)}
-                  className="text-base font-medium text-white/85 hover:text-[var(--lux-green)]"
+                  className="text-base font-medium text-white/85 transition-colors hover:text-white"
                 >
                   {l.label}
                 </a>
@@ -101,11 +101,11 @@ export function Navbar() {
             ))}
           </ul>
           <div className="mt-5 flex items-center gap-4">
-            <button className="text-sm font-semibold text-[var(--lux-green)]">Be a member</button>
+            <button className="text-sm font-semibold text-white/80 transition-colors hover:text-white">Be a member</button>
             <a
               href="#reservations"
               onClick={() => setOpen(false)}
-              className="gradient-lux rounded-full px-5 py-2 text-sm font-semibold text-white"
+              className="gradient-lux rounded-full px-5 py-2 text-sm font-semibold text-white transition-all duration-200 hover:brightness-110 active:scale-95"
             >
               Book Now
             </a>
