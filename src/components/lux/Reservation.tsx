@@ -96,7 +96,7 @@ export function Reservation() {
                     type="button"
                     aria-label="Remove guest"
                     onClick={() => setGuests((g) => Math.max(1, g - 1))}
-                    className="grid h-9 w-9 place-items-center rounded-full bg-white/12 text-white hover:bg-white/20"
+                    className="grid h-9 w-9 place-items-center rounded-full bg-white/12 text-white transition-all duration-200 hover:bg-white/20 active:scale-95"
                   >
                     <Minus className="h-4 w-4" />
                   </button>
@@ -105,7 +105,7 @@ export function Reservation() {
                     type="button"
                     aria-label="Add guest"
                     onClick={() => setGuests((g) => Math.min(12, g + 1))}
-                    className="gradient-lux grid h-9 w-9 place-items-center rounded-full text-white"
+                    className="gradient-lux grid h-9 w-9 place-items-center rounded-full text-white transition-all duration-200 hover:brightness-110 active:scale-95"
                   >
                     <Plus className="h-4 w-4" />
                   </button>
