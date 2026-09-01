@@ -83,14 +83,14 @@ export function MenuSwiper() {
               <button
                 onClick={() => scroll(-1)}
                 aria-label="Previous dishes"
-                className="glass grid h-11 w-11 place-items-center rounded-full text-white hover:text-[var(--lux-amber)]"
+                className="glass grid h-11 w-11 place-items-center rounded-full text-white transition-all duration-200 hover:text-[var(--lux-amber)] active:scale-95"
               >
                 <ArrowLeft className="h-4 w-4" />
               </button>
               <button
                 onClick={() => scroll(1)}
                 aria-label="Next dishes"
-                className="glass grid h-11 w-11 place-items-center rounded-full text-white hover:text-[var(--lux-amber)]"
+                className="glass grid h-11 w-11 place-items-center rounded-full text-white transition-all duration-200 hover:text-[var(--lux-amber)] active:scale-95"
               >
                 <ArrowRight className="h-4 w-4" />
               </button>
@@ -163,7 +163,7 @@ export function MenuSwiper() {
                   <p className="text-xl font-bold text-[var(--lux-amber)]">${d.price}</p>
                 </div>
 
-                <button className="mt-5 w-full rounded-full py-3 text-sm font-semibold text-white opacity-0 transition-all duration-300 group-hover:opacity-100 focus-visible:opacity-100"
+                <button className="mt-5 w-full rounded-full py-3 text-sm font-semibold text-white opacity-0 transition-all duration-300 group-hover:opacity-100 focus-visible:opacity-100 hover:brightness-110 active:scale-95"
                   style={{ background: "var(--lux-green)", boxShadow: "var(--shadow-glow-green)" }}>
                   Add to Order
                 </button>
