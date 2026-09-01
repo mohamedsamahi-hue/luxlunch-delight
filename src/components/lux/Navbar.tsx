@@ -101,11 +101,11 @@ export function Navbar() {
             ))}
           </ul>
           <div className="mt-5 flex items-center gap-4">
-            <button className="text-sm font-semibold text-[var(--lux-green)]">Be a member</button>
+            <button className="text-sm font-semibold text-white/80 transition-colors hover:text-white">Be a member</button>
             <a
               href="#reservations"
               onClick={() => setOpen(false)}
-              className="gradient-lux rounded-full px-5 py-2 text-sm font-semibold text-white"
+              className="gradient-lux rounded-full px-5 py-2 text-sm font-semibold text-white transition-all duration-200 hover:brightness-110 active:scale-95"
             >
               Book Now
             </a>

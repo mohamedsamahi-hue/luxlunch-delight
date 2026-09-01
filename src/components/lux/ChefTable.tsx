@@ -63,7 +63,7 @@ export function ChefTable() {
             />
             <button
               aria-label="Play the chef's table film"
-              className="glass-strong absolute bottom-6 left-6 flex items-center gap-3 rounded-full py-2.5 pr-5 pl-2.5 text-sm font-semibold text-white"
+              className="glass-strong absolute bottom-6 left-6 flex items-center gap-3 rounded-full py-2.5 pr-5 pl-2.5 text-sm font-semibold text-white transition-all duration-200 hover:brightness-125 active:scale-95"
             >
               <span className="gradient-lux grid h-10 w-10 place-items-center rounded-full">
                 <Play className="h-4 w-4 fill-white text-white" />

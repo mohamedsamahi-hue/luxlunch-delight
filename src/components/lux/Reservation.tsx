@@ -115,7 +115,7 @@ export function Reservation() {
               <button
                 type="submit"
                 disabled={loading}
-                className="ripple gradient-lux flex w-full items-center justify-center gap-2 rounded-full py-4 text-sm font-semibold text-white shadow-[var(--shadow-glow-orange)] transition-transform hover:scale-[1.02] disabled:opacity-70"
+                className="ripple gradient-lux flex w-full items-center justify-center gap-2 rounded-full py-4 text-sm font-semibold text-white shadow-[var(--shadow-glow-orange)] transition-all duration-200 hover:brightness-110 active:scale-95 disabled:opacity-70"
               >
                 {loading && <Loader2 className="h-4 w-4 animate-spin" />}
                 {loading ? "Holding your table…" : "Confirm reservation"}
@@ -152,8 +152,8 @@ export function Reservation() {
                             : "var(--shadow-glow-green)",
                       }}
                       className={cn(
-                        "absolute grid h-14 w-14 place-items-center rounded-2xl text-xs font-bold text-white transition-transform",
-                        t.taken ? "cursor-not-allowed text-white/35" : "hover:scale-110",
+                         "absolute grid h-14 w-14 place-items-center rounded-2xl text-xs font-bold text-white transition-all duration-200",
+                        t.taken ? "cursor-not-allowed text-white/35" : "hover:brightness-125 active:scale-95",
                       )}
                     >
                       <span>{t.id}</span>
