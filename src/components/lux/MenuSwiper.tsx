@@ -99,19 +99,28 @@ export function MenuSwiper() {
         </Reveal>
 
         <Reveal delay={120}>
-          <div className="glass mt-9 inline-flex flex-wrap gap-1 rounded-full p-1.5">
-            {categories.map((c) => (
+          <div className="glass relative mt-9 inline-flex flex-wrap gap-1 rounded-full p-1.5">
+            <span
+              aria-hidden="true"
+              className={cn(
+                "gradient-lux absolute top-1.5 bottom-1.5 rounded-full shadow-[var(--shadow-glow-orange)] transition-all duration-300 ease-out",
+                !indicator.ready && "opacity-0",
+              )}
+              style={{ left: indicator.left, width: indicator.width }}
+            />
+            {categories.map((c, i) => (
               <button
                 key={c}
+                ref={(el) => {
+                  tabRefs.current[i] = el;
+                }}
                 onClick={() => {
                   setActive(c);
                   embla?.scrollTo(0);
                 }}
                 className={cn(
-                  "rounded-full px-5 py-2.5 text-sm font-medium transition-all",
-                  active === c
-                    ? "gradient-lux text-white shadow-[var(--shadow-glow-orange)]"
-                    : "text-white/70 hover:text-white",
+                  "relative z-10 rounded-full px-5 py-2.5 text-sm font-medium transition-colors duration-300",
+                  active === c ? "text-white" : "text-white/70 hover:text-white",
                 )}
               >
                 {c}
@@ -125,7 +134,7 @@ export function MenuSwiper() {
             {visible.map((d) => (
               <article
                 key={d.name}
-                className="glass group relative min-w-0 flex-[0_0_86%] rounded-[2rem] p-5 transition-transform duration-300 hover:scale-105 sm:flex-[0_0_46%] lg:flex-[0_0_31%]"
+                className="glass group relative min-w-0 flex-[0_0_86%] rounded-[2rem] p-5 sm:flex-[0_0_46%] lg:flex-[0_0_31%]"
               >
                 <div className="relative grid aspect-4/3 place-items-center overflow-hidden rounded-3xl bg-white/8">
                   <img
