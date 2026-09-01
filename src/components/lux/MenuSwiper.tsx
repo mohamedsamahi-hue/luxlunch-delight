@@ -45,6 +45,19 @@ const dishes: Dish[] = [
 export function MenuSwiper() {
   const [active, setActive] = useState<Category>("Starters");
   const [emblaRef, embla] = useEmblaCarousel({ align: "start", dragFree: true, loop: false });
+  const tabRefs = useRef<(HTMLButtonElement | null)[]>([]);
+  const [indicator, setIndicator] = useState({ left: 0, width: 0, ready: false });
+
+  useEffect(() => {
+    const update = () => {
+      const idx = categories.indexOf(active);
+      const el = tabRefs.current[idx];
+      if (el) setIndicator({ left: el.offsetLeft, width: el.offsetWidth, ready: true });
+    };
+    update();
+    window.addEventListener("resize", update);
+    return () => window.removeEventListener("resize", update);
+  }, [active]);
 
   const scroll = useCallback((dir: -1 | 1) => {
     if (!embla) return;
